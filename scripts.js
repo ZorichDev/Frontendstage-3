@@ -16,6 +16,14 @@ const currencyItems = document.querySelectorAll(".dropdown-item");
 
 let selectedCurrency = "USD"; // Default currency
 
+// Default Asset
+const defaultAssetId = "bitcoin"; // Default asset ID (Bitcoin)
+const defaultAssetType = "crypto"; // Default asset type (crypto)
+
+// Track the currently selected asset
+let currentAssetId = defaultAssetId;
+let currentAssetType = defaultAssetType;
+
 // Chart Initialization
 let priceChart = new Chart(priceChartCanvas, {
   type: "line",
@@ -140,6 +148,9 @@ suggestionsList.addEventListener("click", (e) => {
 
 // Fetch Asset Data
 async function fetchAssetData(id, type) {
+  currentAssetId = id; // Update the currently selected asset ID
+  currentAssetType = type; // Update the currently selected asset type
+
   let data;
   try {
     if (type === "crypto") {
@@ -209,10 +220,10 @@ currencyItems.forEach((item) => {
     e.preventDefault();
     selectedCurrency = e.target.getAttribute("data-currency");
     currencyDropdown.textContent = selectedCurrency;
-    const assetId = document.querySelector(".list-group-item.active")?.getAttribute("data-id");
-    const assetType = document.querySelector(".list-group-item.active")?.getAttribute("data-type");
-    if (assetId && assetType) {
-      fetchAssetData(assetId, assetType);
+
+    // Re-fetch data for the currently selected asset
+    if (currentAssetId && currentAssetType) {
+      fetchAssetData(currentAssetId, currentAssetType);
     }
   });
 });
@@ -220,4 +231,9 @@ currencyItems.forEach((item) => {
 // Dark Mode Toggle
 darkModeToggle.addEventListener("click", () => {
   document.body.classList.toggle("dark-mode");
+});
+
+// Fetch data for the default asset when the page loads
+document.addEventListener("DOMContentLoaded", () => {
+  fetchAssetData(defaultAssetId, defaultAssetType);
 });
