@@ -1,0 +1,247 @@
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #f8f9fa;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+}
+
+/* Navbar Styles */
+.navbar {
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1rem 0;
+  background: linear-gradient(135deg, #6a11cb, #2575fc); 
+}
+
+.navbar-brand {
+  font-weight: bold;
+  font-size: 1.75rem;
+  display: flex;
+  align-items: center;
+  letter-spacing: -0.5px;
+  color: #ffffff !important; 
+}
+
+
+.dropdown-menu {
+  max-height: 200px;
+  overflow-y: auto;
+  border: none;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.dropdown-item {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-item:hover {
+  background-color: #f8f9fa;
+}
+
+/* Dark Mode Styles for Navbar */
+.dark-mode .navbar {
+  background: linear-gradient(135deg, #1e1e1e, #121212); 
+  border-bottom: 1px solid #444;
+}
+
+.dark-mode .navbar-brand,
+.dark-mode .nav-link,
+.dark-mode .dropdown-item {
+  color: #ffffff !important;
+}
+
+.dark-mode .dropdown-menu {
+  background-color: #333;
+}
+
+.dark-mode .dropdown-item:hover {
+  background-color: #444;
+}
+
+/* Dark Mode Toggle Button */
+#darkModeToggle {
+  background-color: #ff6347;
+  border: none;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  transition: background-color 0.3s ease;
+}
+
+#darkModeToggle:hover {
+  background-color: #e5533d;
+}
+
+.dark-mode #darkModeToggle {
+  background-color: #ff6347;
+  border-color: #ff6347;
+}
+
+.dark-mode #darkModeToggle:hover {
+  background-color: #e5533d;
+  border-color: #e5533d;
+}
+
+/* Dark Mode General Styles */
+.dark-mode {
+  background-color: #121212;
+  color: #ffffff;
+}
+
+/* Price Display Card */
+#priceDisplay {
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 1.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+#priceDisplay:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 12px rgba(0, 0, 0, 0.2);
+}
+
+.dark-mode #priceDisplay {
+  background-color: #1e1e1e;
+  color: #ffffff;
+}
+
+#priceDisplay h3 {
+  font-size: 1.75rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  color: #2575fc; /* Accent color for headings */
+}
+
+#priceDisplay p {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0.5rem 0;
+  color: #333;
+}
+
+.dark-mode #priceDisplay h3 {
+  color: #6a11cb; /* Dark mode accent color */
+}
+
+.dark-mode #priceDisplay p {
+  color: #ffffff;
+}
+
+/* Suggestions Dropdown */
+#suggestions {
+  display: none;
+  position: absolute;
+  z-index: 1000;
+  width: 100%;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#suggestions .list-group-item {
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#suggestions .list-group-item:hover {
+  background-color: #f8f9fa;
+}
+
+.dark-mode #suggestions {
+  background-color: #333;
+}
+
+.dark-mode #suggestions .list-group-item:hover {
+  background-color: #444;
+}
+
+/* Price Chart */
+#priceChart {
+  max-width: 100%;
+  height: 300px;
+  margin: 0 auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+}
+
+.dark-mode #priceChart {
+  background-color: #2c2c2c;
+}
+
+/* Typography Enhancements */
+h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  color: #2575fc; /* Accent color for main heading */
+}
+
+.dark-mode h1 {
+  color: #6a11cb; /* Dark mode accent color */
+}
+
+h2 {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.dark-mode h2 {
+  color: #ffffff;
+}
+
+p {
+  font-size: 1.1rem;
+  font-weight: 400;
+  line-height: 1.6;
+  color: #333;
+}
+
+.dark-mode p {
+  color: #ffffff;
+}
+
+/* Buttons */
+.btn {
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  background-color: #2575fc;
+  border: none;
+  color: #ffffff;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #1a5bbf;
+}
+
+.dark-mode .btn {
+  background-color: #6a11cb;
+}
+
+.dark-mode .btn:hover {
+  background-color: #4d0c9a;
+}
+
+/* Container for Centering Content */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
